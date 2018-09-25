@@ -1,0 +1,11 @@
+https://datatables-dev.iss.lxk.co
+7c85539b-0376-4c58-8657-1d1cf7bca23a
+e5fae74a-12ee-4a0d-9d98-8ea49a89941e
+https://idp-dev.iss.lxk.co/oauth/token
+noncoreiot
+55807c62a20d39ccafa0da20d19a87552c7a49af9473c1dc0d6f16ae611e1bc6
+server101
+52.39.168.117
+
+
+

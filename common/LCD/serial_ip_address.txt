@@ -1,0 +1,7 @@
+Also, I created /etc/udev/rules.d/88-lram.rules which contains this one line:
+
+ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", RUN+="/home/lexmark/test.py"
+
+Which runs that script on USB insertion.
+
+Make sense?
