@@ -1,0 +1,27 @@
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python git-core python-dev nmap python-setuptools python-pip python-gpiozero python-crypto mosquitto mosquitto-clients -y
+sudo pip install pyserial paho-mqtt python-nmap
+
+
+#wiring pi:
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build
+sudo rm -r wiringPi
+
+cd
+sudo git clone git://github.com/timleland/rfoutlet.git /var/www/rfoutlet
+sudo chown root.root /var/www/rfoutlet/codesend
+sudo chmod 4755 /var/www/rfoutlet/codesend
+
+usage: sudo /var/www/rfoutlet/codesend #######
+
+#433Utils:
+git clone --recursive git://github.com/ninjablocks/433Utils.git
+cd 433Utils/RPi_utils
+make
+usage: 433Utils/RPi_utils/RFSniffer
+
+
