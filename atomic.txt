@@ -6,4 +6,4 @@ cd garage
 sudo pip install virtualenv
 virtualenv gar
 source gar/bin/activate
-sudo pip install pyserial paho-mqtt python-nmap
+sudo pip install pyserial paho-mqtt python-nmap python-statemachine

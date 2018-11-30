@@ -43,9 +43,10 @@ class GarSensorMachine(StateMachine):
 #=========
 #main
 ip_address = boot.find_ip()
-print ip_address
-gatewayip = boot.find_gateway(ip_address,"yeti")
-print gatewayip
+print "my ip is "+str(ip_address)
+#gatewayip = boot.find_gateway(ip_address,"yeti")
+gatewayip = "192.168.1.4"
+print "gateway is "+str(gatewayip)
 GarageStatus = GarSensorMachine()
 
 while True:
@@ -60,13 +61,13 @@ while True:
     print "d3 "+str(dist3)
     if dist1 == dist2 and dist2 == dist3:
         dist = dist1
-        if dist > 30 and GarageStatus.is_empty:
+        if dist > 10 and GarageStatus.is_empty:
             print "do nothing"   
-        elif dist < 30 and GarageStatus.is_empty:
+        elif dist < 10 and GarageStatus.is_empty:
             GarageStatus.arrive()
-        elif dist < 30 and GarageStatus.is_full:
+        elif dist < 10 and GarageStatus.is_full:
             print "nada"
-        elif dist > 30 and GarageStatus.is_full:
+        elif dist > 10 and GarageStatus.is_full:
             GarageStatus.leave()
     
 
