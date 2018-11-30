@@ -1,5 +1,5 @@
 from sensor import distance
 
-dist = distance.getdistance
+dist = distance.getdistance()
 
 print dist

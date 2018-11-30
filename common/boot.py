@@ -14,7 +14,7 @@ def find_ip():
 def find_gateway(local_ip, server):
     output = subprocess.Popen(["host", server], stdout=subprocess.PIPE).communicate()[0]
     out = output.split()
-    print output
+    #print output
     if out[3] == "found:" or "198.105.244.228":
         nm = nmap.PortScanner()
         results = nm.scan('192.168.1.1-40', '1883')

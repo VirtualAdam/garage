@@ -1,0 +1,9 @@
+sudo apt-get update
+sudo apt-get install python git-core python-dev nmap python-setuptools python-pip python-gpiozero python-crypto mosquitto mosquitto-clients -y
+sudo pip install virtualenv
+git clone https://github.com/VirtualAdam/garage.git
+cd garage
+sudo pip install virtualenv
+virtualenv gar
+source gar/bin/activate
+sudo pip install pyserial paho-mqtt python-nmap

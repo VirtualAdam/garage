@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-def getdistance:
+def getdistance():
       try:
             GPIO.setmode(GPIO.BOARD)
 
@@ -34,9 +34,10 @@ def getdistance:
             pulse_duration = pulse_end_time - pulse_start_time
             distance = round(pulse_duration * 17150, 2)
 #           print "Distance:",distance,"cm"
-            #print distance
+            out = round(distance/2.54, 1)
+            
 
       finally:
-            GPIO.cleanup()
-      return distance
-      
+       GPIO.cleanup()
+      return out
+ 
