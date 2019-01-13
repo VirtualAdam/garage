@@ -13,6 +13,7 @@ sudo pip install pyserial paho-mqtt python-nmap
 git clone git://git.drogon.net/wiringPi
 cd wiringPi
 ./build
+cd ..
 sudo rm -r wiringPi
 
 cd

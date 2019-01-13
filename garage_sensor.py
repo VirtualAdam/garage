@@ -44,8 +44,9 @@ class GarSensorMachine(StateMachine):
 #main
 ip_address = boot.find_ip()
 print "my ip is "+str(ip_address)
-#gatewayip = boot.find_gateway(ip_address,"yeti")
-gatewayip = "192.168.1.4"
+gatelist = boot.find_gateway(ip_address, "yeti")
+print gatelist
+gatewayip = boot.check_address(gatelist)
 print "gateway is "+str(gatewayip)
 GarageStatus = GarSensorMachine()
 
