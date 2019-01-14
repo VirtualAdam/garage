@@ -62,13 +62,13 @@ while True:
     print "d3 "+str(dist3)
     if dist1 == dist2 and dist2 == dist3:
         dist = dist1
-        if dist > 10 and GarageStatus.is_empty:
+        if dist > 25 and GarageStatus.is_empty:
             print "do nothing"   
-        elif dist < 10 and GarageStatus.is_empty:
+        elif dist < 25 and GarageStatus.is_empty:
             GarageStatus.arrive()
-        elif dist < 10 and GarageStatus.is_full:
+        elif dist < 25 and GarageStatus.is_full:
             print "nada"
-        elif dist > 10 and GarageStatus.is_full:
+        elif dist > 25 and GarageStatus.is_full:
             GarageStatus.leave()
     
 
