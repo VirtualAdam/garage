@@ -70,6 +70,7 @@ while True:
             print "nada"
         elif dist > 25 and GarageStatus.is_full:
             GarageStatus.leave()
+    time.sleep(60)
     
 
 
