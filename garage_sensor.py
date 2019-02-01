@@ -41,7 +41,8 @@ class GarSensorMachine(StateMachine):
         time.sleep(2)
         camera.send_pic_to_server(picture_id, server_id)  
         publish.single("lex/garage1/", "garage full-"+picture_id, hostname=gatewayip, qos=0) 
-        #add code to delete picture from disk
+        time.sleep(3)
+        camera.delete_pic_on_disk(picture_id)
 
     def on_leave(self):
         print('howdy') 
@@ -49,7 +50,8 @@ class GarSensorMachine(StateMachine):
         time.sleep(2)
         camera.send_pic_to_server(picture_id, server_id)  
         publish.single("lex/garage1/", "garage empty-"+picture_id, hostname=gatewayip, qos=0) 
-        #add code to delete picture from disk
+        time.sleep(3)
+        camera.delete_pic_on_disk(picture_id)
 
 #=========
 #main
