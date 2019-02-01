@@ -29,4 +29,7 @@ cd 433Utils/RPi_utils
 make
 usage: 433Utils/RPi_utils/RFSniffer
 
+camera:
+sudo apt-get install fswebcam
+
 

@@ -10,7 +10,7 @@ def take_picture():
 	return fullname
 	
 def send_pic_to_server(filename, server):
-	files = "file=@/home/pi/Superman/"+filename
+	files = "file=@/home/pi/garage/"+filename
 	print files
 	data = subprocess.Popen(["curl", "-X", "POST", "-F", "file=@/home/pi/Superman/"+filename, server], stdout=subprocess.PIPE).communicate()[0]
 	#sudo curl -X POST -F file=@/home/pi/Superman/image.jpg http://localhost:8000
