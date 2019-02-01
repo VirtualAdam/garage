@@ -20,6 +20,8 @@ import time
 import paho.mqtt.publish as publish
 from common import boot
 from sensor import distance
+from sensor import camera
+server_id = "http://192.168.1.35:8040"
 
 
 class GarSensorMachine(StateMachine):
@@ -34,12 +36,21 @@ class GarSensorMachine(StateMachine):
     #callbacks
 
     def on_arrive(self):
-        print('howdy')   
-        publish.single("lex/garage1/", "garage full", hostname=gatewayip, qos=0) 
+        print('howdy') 
+        picture_id = camera.take_picture()
+        time.sleep(2)
+        camera.send_pic_to_server(picture_id, server_id)  
+        publish.single("lex/garage1/", "garage full-"+picture_id, hostname=gatewayip, qos=0) 
+        #add code to delete picture from disk
 
     def on_leave(self):
-        publish.single("lex/garage1/", "garage empty", hostname=gatewayip, qos=0) 
-    
+        print('howdy') 
+        picture_id = camera.take_picture()
+        time.sleep(2)
+        camera.send_pic_to_server(picture_id, server_id)  
+        publish.single("lex/garage1/", "garage empty-"+picture_id, hostname=gatewayip, qos=0) 
+        #add code to delete picture from disk
+
 #=========
 #main
 ip_address = boot.find_ip()
