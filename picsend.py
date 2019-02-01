@@ -12,7 +12,7 @@ def take_picture():
 def send_pic_to_server(filename, server):
 	files = "file=@/home/pi/garage/"+filename
 	print files
-	data = subprocess.Popen(["curl", "-X", "POST", "-F", "file=@/home/pi/Superman/"+filename, server], stdout=subprocess.PIPE).communicate()[0]
+	data = subprocess.Popen(["curl", "-X", "POST", "-F", "file=@/home/pi/garage/"+filename, server], stdout=subprocess.PIPE).communicate()[0]
 	#sudo curl -X POST -F file=@/home/pi/Superman/image.jpg http://localhost:8000
 
 server_id = "http://192.168.1.35:8040"
