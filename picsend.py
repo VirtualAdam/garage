@@ -17,6 +17,8 @@ def send_pic_to_server(filename, server):
 
 def delete_pic_on_disk(filename):
 	os.remove(filename)
+	here = os.path.isfile(filename) 
+	print here
 	
 server_id = "http://192.168.1.35:8040"
 picture_id = take_picture()
