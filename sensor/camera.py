@@ -10,7 +10,10 @@ def take_picture():
 	return fullname
 	
 def send_pic_to_server(filename, server):
-	data = subprocess.Popen(["curl", "-X", "POST", "-F", "file=@/home/pi/garage/"+filename, server], stdout=subprocess.PIPE).communicate()[0]
+	path = os.path.dirname(os.path.abspath(__file__))
+	files = "file=@/"+path+"/"+filename
+	print files
+	data = subprocess.Popen(["curl", "-X", "POST", "-F", files, server], stdout=subprocess.PIPE).communicate()[0]
 	#sudo curl -X POST -F file=@/home/pi/Superman/image.jpg http://localhost:8000
 
 def delete_pic_on_disk(filename):
