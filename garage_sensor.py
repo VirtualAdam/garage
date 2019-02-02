@@ -45,7 +45,7 @@ class GarSensorMachine(StateMachine):
         camera.delete_pic_on_disk(picture_id)
 
     def on_leave(self):
-        print('howdy') 
+        print('see ya') 
         picture_id = camera.take_picture()
         time.sleep(2)
         camera.send_pic_to_server(picture_id, server_id)  
