@@ -20,7 +20,7 @@ import time
 import paho.mqtt.publish as publish
 from common import boot
 from sensor import distance
-from sensor import camera
+import camera
 server_id = "http://192.168.1.35:8040"
 
 
